@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<javadocOptions>
+  <docletArtifacts>
+    <docletArtifact />
+  </docletArtifacts>
+  <tagletArtifacts>
+    <tagletArtifact />
+  </tagletArtifacts>
+  <excludePackageNames>
+    <excludePackageName>*.components.*</excludePackageName>
+    <excludePackageName>*.common.*</excludePackageName>
+    <excludePackageName>*.comparator.*</excludePackageName>
+    <excludePackageName>*.config.*</excludePackageName>
+    <excludePackageName>*.dal.*</excludePackageName>
+    <excludePackageName>*.enumeration.*</excludePackageName>
+    <excludePackageName>*.index.*</excludePackageName>
+    <excludePackageName>*.utils.*</excludePackageName>
+  </excludePackageNames>
+  <javadocResourcesDirectory>src/main/javadoc</javadocResourcesDirectory>
+</javadocOptions>

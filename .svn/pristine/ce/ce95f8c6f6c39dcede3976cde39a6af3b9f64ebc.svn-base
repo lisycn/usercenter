@@ -1,0 +1,45 @@
+package com.jx.blackface.gaea.usercenter.components;
+
+import java.util.Date;
+import java.util.List;
+
+import com.jx.blackface.gaea.usercenter.common.IDHelper;
+import com.jx.blackface.gaea.usercenter.contract.ILoginService;
+import com.jx.blackface.gaea.usercenter.entity.BFLoginEntity;
+import com.jx.spat.gaea.server.contract.annotation.ServiceBehavior;
+
+@ServiceBehavior
+public class LoginService extends CommonService implements ILoginService {
+
+	public long addLoginEntity(BFLoginEntity e) throws Exception {
+		// TODO Auto-generated method stub
+		long resid = 0;
+		long pid = IDHelper.getUniqueID();
+		if(e != null){
+			e.setUserid(pid);
+			e.setAddtime(new Date().getTime());
+			insertObjec(e);
+			resid = pid;
+		}
+		
+		return resid;
+	}
+
+
+	public void updateLoginEntity(BFLoginEntity e) throws Exception {
+		e.setLastuptime(new Date());
+		updateObject(e);
+	}
+
+	public BFLoginEntity getLoginEntityById(long loginid) throws Exception {
+		return (BFLoginEntity)getObjectByid(loginid,BFLoginEntity.class);
+	}
+	public List<BFLoginEntity> getLoginEntity(String condition, int pageindex,
+			int pagesize, String orderby) throws Exception {
+		return (List<BFLoginEntity>) getListBypage(BFLoginEntity.class, condition, pageindex, pagesize, orderby);
+	}
+
+	
+	
+
+}
